@@ -1,11 +1,12 @@
 package shape;
 
+import java.awt.*;
 import java.util.Arrays;
 
 public class SShape extends Shape {
 
-    public SShape(int x, int y) {
-        super(x, y, 6);
+    public SShape() {
+        super(new Color(0, 235, 0));
         var a = new int[][][]{
                 {
                         { 6, 0 },
@@ -18,11 +19,25 @@ public class SShape extends Shape {
                 }
         };
 
+        var b = new int[][][]{
+                {
+                        { 0, 0, 0, 0 },
+                        { 0, 6, 0, 0 },
+                        { 0, 6, 6, 0 },
+                        { 0, 0, 6, 0 },
+                },
+                {
+                        { 0, 0, 0, 0 },
+                        { 0, 6, 6, 0 },
+                        { 6, 6, 0, 0 },
+                        { 0, 0, 0, 0 },
+                }
+        };
+
         states = Arrays.asList(a);
+        template = Arrays.asList(b);
+
+        generateState();
     }
 
-    @Override
-    public Shape copy() {
-        return new SShape(x, y);
-    }
 }

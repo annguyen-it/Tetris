@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class Game extends JFrame {
 
-    private static final int WIDTH = 510;
-    private static final int HEIGHT = 810;
+    public static final int WIDTH = 700;
+    public static final int HEIGHT = 790;
 
     public Game() {
         super();

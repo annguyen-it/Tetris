@@ -1,11 +1,12 @@
 package shape;
 
+import java.awt.*;
 import java.util.Arrays;
 
 public class TShape extends Shape {
 
-    public TShape(int x, int y) {
-        super(x, y, 5);
+    public TShape() {
+        super(new Color(160, 0, 235));
         var a = new int[][][]{
                 {
                         { 5, 0 },
@@ -27,11 +28,37 @@ public class TShape extends Shape {
                 }
         };
 
+        var b = new int[][][]{
+                {
+                        { 0, 0, 0, 0 },
+                        { 0, 5, 0, 0 },
+                        { 0, 5, 5, 0 },
+                        { 0, 5, 0, 0 },
+                },
+                {
+                        { 0, 0, 0, 0 },
+                        { 5, 5, 5, 0 },
+                        { 0, 5, 0, 0 },
+                        { 0, 0, 0, 0 },
+                },
+                {
+                        { 0, 0, 0, 0 },
+                        { 0, 0, 5, 0 },
+                        { 0, 5, 5, 0 },
+                        { 0, 0, 5, 0 },
+                },
+                {
+                        { 0, 0, 0, 0 },
+                        { 0, 5, 0, 0 },
+                        { 5, 5, 5, 0 },
+                        { 0, 0, 0, 0 },
+                }
+        };
+
         states = Arrays.asList(a);
+        template = Arrays.asList(b);
+
+        generateState();
     }
 
-    @Override
-    public Shape copy() {
-        return new TShape(x, y);
-    }
 }
